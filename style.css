@@ -1,0 +1,183 @@
+/*
+  MIT License
+  Copyright (c) 2025 ngboonkhai
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+  
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+*/
+
+:root {
+  --bg-color: #f0f2f5;
+  --text-color: #333;
+  --input-bg: #fff;
+  --input-border: #ccc;
+  --button-bg: #1976d2;
+  --button-hover: #1565c0;
+}
+
+body.dark-mode {
+  --bg-color: #1e1e1e;
+  --text-color: #ddd;
+  --input-bg: #2e2e2e;
+  --input-border: #444;
+  --button-bg: #4444aa;
+  --button-hover: #6666cc;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.grid-wrapper {
+  overflow-x: auto;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+.bit-labels,
+.bit-field {
+  display: grid;
+  grid-template-columns: repeat(32, 30px); /* exactly 32 bits */
+  gap: 2px;
+  text-align: center;
+  min-width: 1024px;
+}
+
+/* Change this for the size adjust */
+.bit-labels div,
+.bit-field input {
+  width: 30px;      /* Change this for the size adjust */
+  min-width: 30px;  /* Change this for the size adjust */
+  max-width: 30px;  /* Change this for the size adjust */
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 12px;  /* Change this for the size adjust */
+}
+
+.bit-labels div.group-space,
+.bit-field div.group-space {
+  pointer-events: none;
+  background: none;
+  width: 10px;
+}
+
+/* Change this for the size adjust */
+.bit-field input {
+  padding: 4px;                         /* Change this for the size adjust */
+  font-family: monospace;
+  font-size: 14px;                      /* Change this for the size adjust */
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--input-border);
+  border-radius: 3px;
+}
+
+.bit-field input.bit-1 {
+  background-color: #c8f7c5; /* light green when value is 1 */
+  color: black;
+  font-weight: bold;
+}
+
+.controls,
+.extra-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: var(--button-bg);
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--button-hover);
+}
+
+.label-display {
+  margin-top: 20px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.inputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.inputs input[type="text"] {
+  padding: 8px;
+  font-family: monospace;
+  font-size: 1em;
+  width: 250px;
+  box-sizing: border-box;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--input-border);
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  button {
+    font-size: 0.9em;
+    padding: 8px 12px;
+  }
+
+  .bit-labels,
+  .bit-field {
+    font-size: 10px;
+    min-width: 1080px;
+  }
+
+  .inputs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .inputs input[type="text"] {
+    width: 100%;
+    max-width: 90vw;
+  }
+}

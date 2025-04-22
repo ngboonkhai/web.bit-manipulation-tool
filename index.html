@@ -1,0 +1,70 @@
+<!--
+  MIT License
+  Copyright (c) 2025 ngboonkhai
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+  
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bit Manipulation Tool</title>
+  <link rel="stylesheet" href="style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5171079448310757"
+     crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+  <h1>32-Bit Manipulation Tool</h1>
+<div class="grid-wrapper">
+  <div>
+    <div class="bit-labels" id="bitLabels"></div>
+    <div class="bit-field" id="bitInputs"></div>
+  </div>
+</div>
+  <div class="controls">
+    <button onclick="rotateLeft()">Rotate Left</button>
+    <button onclick="rotateRight()">Rotate Right</button>
+    <button onclick="shiftLeft()">Shift Left</button>
+    <button onclick="shiftRight()">Shift Right</button>
+    <button onclick="onesComplement()">1's Complement</button>
+    <button onclick="zeroBits()">Zero Bits</button>
+  </div>
+
+  <div class="label-display">
+    <p><strong>Hex:</strong> <span id="hexValue">0x00000000</span></p>
+    <p><strong>Decimal:</strong> <span id="decValue">0</span></p>
+  </div>
+
+  <div class="inputs">
+    <div>
+      <input type="text" id="hexInput" placeholder="Enter hex (e.g. 0xAABBCCDD)">
+      <button onclick="fillFromHex()">Fill from Hex</button>
+    </div>
+    <div>
+      <input type="text" id="decInput" placeholder="Enter decimal">
+      <button onclick="fillFromDec()">Fill from Decimal</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
