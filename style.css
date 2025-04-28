@@ -181,3 +181,46 @@ button:hover {
     max-width: 90vw;
   }
 }
+
+.tool-info {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  line-height: 1.6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tool-info h2 {
+  margin-top: 20px;
+  color: #333;
+}
+
+.tool-info p, .tool-info ul, .tool-info ol {
+  font-size: 16px;
+  color: #555;
+}
+
+.tool-info ul, .tool-info ol {
+  padding-left: 20px;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #777;
+  background-color: #f1f1f1;
+}
+
+.site-footer a {
+  color: #555;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
