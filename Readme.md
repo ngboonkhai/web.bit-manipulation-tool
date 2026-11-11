@@ -15,6 +15,13 @@ A visual and interactive web-based tool for performing bit-level operations on a
   - Displays current value in **Hexadecimal** and **Decimal**
 - 💡 Input support:
   - Fill bit field from a **hex** or **decimal** input
+- ➕ Multiple independent instances:
+  - Add as many copies as you like with the **+ Add** button (they grow downward)
+  - Each copy has its own editable name (e.g. `CTRL`, `STATUS`) and can be removed with ✕
+  - Copy the **hex** or **decimal** value of any copy with one click
+- 🔍 Compare mode (opt-in via the **Compare** button):
+  - Bits that differ from the first instance are outlined in the others
+  - Pick any two instances and view their **XOR / AND / OR** result
 
 ## 📱 Responsive Design
 

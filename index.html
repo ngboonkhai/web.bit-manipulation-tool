@@ -34,36 +34,39 @@
 <body>
 
   <h1>32-Bit Manipulation Tool</h1>
-<div class="grid-wrapper">
-  <div>
-    <div class="bit-labels" id="bitLabels"></div>
-    <div class="bit-field" id="bitInputs"></div>
-  </div>
-</div>
-  <div class="controls">
-    <button onclick="rotateLeft()">Rotate Left</button>
-    <button onclick="rotateRight()">Rotate Right</button>
-    <button onclick="shiftLeft()">Shift Left</button>
-    <button onclick="shiftRight()">Shift Right</button>
-    <button onclick="onesComplement()">1's Complement</button>
-    <button onclick="zeroBits()">Zero Bits</button>
+  <!-- Bit manipulation instances are added here by script.js -->
+  <div id="instances"></div>
+
+  <div class="instance-toolbar">
+    <button type="button" id="addInstance" title="Add another bit manipulation tool below">+ Add</button>
+    <button type="button" id="toggleCompare" aria-pressed="false" title="Highlight bits that differ from the first instance and show XOR / AND / OR results">Compare</button>
   </div>
 
-  <div class="label-display">
-    <p><strong>Hex:</strong> <span id="hexValue">0x00000000</span></p>
-    <p><strong>Decimal:</strong> <span id="decValue">0</span></p>
-  </div>
-
-  <div class="inputs">
-    <div>
-      <input type="text" id="hexInput" placeholder="Enter hex (e.g. 0xAABBCCDD)">
-      <button onclick="fillFromHex()">Fill from Hex</button>
+  <section class="compare-panel" id="comparePanel" hidden>
+    <h2>Compare</h2>
+    <p class="compare-hint">Bits that differ from the first instance are outlined in the other instances.</p>
+    <div class="compare-row">
+      <select id="cmpA" aria-label="Operand A"></select>
+      <select id="cmpOp" aria-label="Operation">
+        <option value="XOR">XOR</option>
+        <option value="AND">AND</option>
+        <option value="OR">OR</option>
+      </select>
+      <select id="cmpB" aria-label="Operand B"></select>
     </div>
-    <div>
-      <input type="text" id="decInput" placeholder="Enter decimal">
-      <button onclick="fillFromDec()">Fill from Decimal</button>
+    <div class="grid-wrapper">
+      <div>
+        <div class="bit-labels" id="resLabels"></div>
+        <div class="bit-field" id="resBits"></div>
+      </div>
     </div>
-  </div>
+    <div class="label-display">
+      <p><strong>Hex:</strong> <span id="resHex" data-value>0x00000000</span>
+        <button type="button" class="copy-btn">Copy</button></p>
+      <p><strong>Decimal:</strong> <span id="resDec" data-value>0</span>
+        <button type="button" class="copy-btn">Copy</button></p>
+    </div>
+  </section>
 
 <div class="tool-info">
   <h2>About This Tool</h2>
@@ -79,6 +82,9 @@
     <li>Apply 1’s complement to invert all bits.</li>
     <li>Set all bits to zero with a single click.</li>
     <li>Input your own hexadecimal or decimal value to start editing.</li>
+    <li>Add more independent copies with the + button, and give each one a name (e.g. CTRL, STATUS).</li>
+    <li>Copy the hex or decimal value of any copy with one click.</li>
+    <li>Turn on Compare to highlight differing bits and see XOR / AND / OR results between any two copies.</li>
   </ul>
 
   <h2>How to Use</h2>

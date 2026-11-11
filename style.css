@@ -106,6 +106,111 @@ h1 {
   font-weight: bold;
 }
 
+/* Bit differs from the first instance (Compare mode) */
+.bit-field input.bit-diff {
+  border: 2px solid #e65100;
+  box-shadow: 0 0 4px #e65100;
+}
+
+.bit-field input[readonly] {
+  cursor: default;
+}
+
+.bit-instance {
+  max-width: 1100px;
+  margin: 0 auto 24px;
+  padding: 16px;
+  border: 1px solid var(--input-border);
+  border-radius: 10px;
+}
+
+.instance-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.instance-name {
+  padding: 6px 8px;
+  font-size: 1em;
+  font-weight: bold;
+  width: 240px;
+  max-width: 100%;
+  box-sizing: border-box;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+}
+
+.remove-btn {
+  margin-left: auto;
+  padding: 6px 10px;
+  background-color: #c62828;
+}
+
+.remove-btn:hover {
+  background-color: #8e0000;
+}
+
+.copy-btn {
+  padding: 2px 8px;
+  margin-left: 6px;
+  font-size: 0.8em;
+}
+
+.instance-toolbar {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 10px 0 20px;
+}
+
+.instance-toolbar button.active {
+  background-color: #e65100;
+}
+
+.compare-panel {
+  max-width: 1100px;
+  margin: 0 auto 24px;
+  padding: 16px;
+  border: 2px solid #e65100;
+  border-radius: 10px;
+}
+
+.compare-panel[hidden] {
+  display: none;
+}
+
+.compare-panel h2 {
+  margin: 0 0 4px;
+  text-align: center;
+}
+
+.compare-hint {
+  text-align: center;
+  font-size: 14px;
+  margin: 0 0 10px;
+}
+
+.compare-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.compare-row select {
+  padding: 8px;
+  font-size: 1em;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+}
+
 .controls,
 .extra-controls {
   display: flex;
